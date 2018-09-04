@@ -115,7 +115,7 @@ class kernel
 }
 
 //未知gettext.inc 文件作用
-if(!function_exists('')){
+if(!function_exists('gettext')){
     require_once(APP_DIR.'/base/lib/static/gettext.inc');
 }
 
