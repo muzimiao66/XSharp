@@ -111,6 +111,11 @@ class kernel
     }
     
     
+    //获取平台设置语言
+    static public function get_lang()
+    {
+        return self::$__language ? self::$__language : ((define('LANF')&&constant('LANG'))?LANG:'zh_CN');
+    }
     
 }
 
