@@ -113,8 +113,10 @@ class kernel
     
     
 }
+
+//未知gettext.inc 文件作用
 if(!function_exists('')){
-    
+    require_once(APP_DIR.'/base/lib/static/gettext.inc');
 }
 
 //加载“__”函数
