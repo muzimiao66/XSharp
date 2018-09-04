@@ -50,6 +50,8 @@ class kernel
     static private $__require_config = NULL;
     static private $__host_mirrors = NULL;
     static private $__host_mirrors_count = NULL;
+    
+    //核心路由处理函数
     static function boot(){
 //         set_error_handler(array('kernel','exception_error_handler'));
         echo '这是boot';
@@ -61,6 +63,83 @@ class kernel
             
 //         }
     }
+    
+    static function exception_error_handler($errno,$errstr,$errfile,$errfile,$errline){
+        
+    }
+    
+    static function router(){
+        
+    }
+    
+    static function openapi_url(){
+        
+    }
+    
+    static function request(){
+        
+    }
+    
+    static function url_prefix(){
+        
+    }
+    
+    static function this_url(){
+        
+    }
+    
+    static private function get_host_mirror(){
+        
+    }
+    
+    static function get_themes_host_url(){
+        
+    }
+    
+    static function get_app_statics_host_url(){
+        
+    }
+    
+    static function base_url($full){
+        
+    }
+    
+    static function set_online($mode){
+        
+    }
+    
+    static function is_online(){
+        
+    }
+    
+    static function single($class_name,$arg=null){
+        
+    }
+    
+    static function database(){
+        
+    }
+    
+    static function service($srv_name,$filter=null){
+        
+    }
+    
+    static function servicelist($srv_name,$filter=null){
+        
+    }
+    
+    static function strip_magic_quotes(&$var){
+        
+    }
+    
+    static function register_autoload($load=array()){
+        
+    }
+    
+    static function unregister_autoload($load=array('kernel', 'autoload')){
+        
+    }
+    
     static function autoload($class_name)
     {
         //$p b2c_ctl_wap_brand
@@ -109,9 +188,12 @@ class kernel
         }
         
     }
+    //设置平台语言
+    static public function set_lang($language){
+        self::$__language = trim($language);
+    }
     
-    
-    //获取平台设置语言
+    //获取平台展示语言
     static public function get_lang()
     {
         return self::$__language ? self::$__language : ((define('LANF')&&constant('LANG'))?LANG:'zh_CN');
