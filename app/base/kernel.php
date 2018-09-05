@@ -134,10 +134,15 @@ class kernel
     
     static function register_autoload($load=array()){
         
+        
     }
     
     static function unregister_autoload($load=array('kernel', 'autoload')){
-        
+        if(){
+            
+        }else{
+            
+        }
     }
     
     static function autoload($class_name)
