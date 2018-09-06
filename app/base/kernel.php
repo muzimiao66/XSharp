@@ -138,11 +138,11 @@ class kernel
     }
     
     static function unregister_autoload($load=array('kernel', 'autoload')){
-        if(){
+//         if(function_exists($function_name)){
             
-        }else{
+//         }else{
             
-        }
+//         }
     }
     
     static function autoload($class_name)
