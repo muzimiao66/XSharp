@@ -141,12 +141,13 @@ class kernel
         }
     }
     
+    //取消注册 类自动加载函数
     static function unregister_autoload($load=array('kernel', 'autoload')){
-//         if(function_exists($function_name)){
-            
-//         }else{
-            
-//         }
+        if (function_exists('spl_autoload_register')){
+            return spl_autoload_unregister($load);
+        }else {
+            return false;
+        }
     }
     
     static function autoload($class_name)
