@@ -132,9 +132,13 @@ class kernel
         
     }
     
-    static function register_autoload($load=array()){
-        
-        
+    //注册类自动加载函数
+    static function register_autoload($load=array('kernel','autoload')){
+        if (function_exists('spl_autoload_register')){
+            return spl_autoload_register($load);
+        }else {
+            return false;
+        }
     }
     
     static function unregister_autoload($load=array('kernel', 'autoload')){
