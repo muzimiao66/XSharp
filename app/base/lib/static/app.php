@@ -42,4 +42,14 @@ class app
         return self::$__instance[$app_id];
     }
     
+    //获取 lang 的语言包
+    public function lang_resource($lang = null){
+        if(!isset($this->_lang_resource)){
+            $this->_lang_resource = lang::get_res($this->app_id);
+        }
+        return !isset($lang)?$this->_lang_resource:$this->_lang_resource[$lang];
+    }
+
+    
+    
 }
