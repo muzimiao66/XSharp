@@ -49,7 +49,16 @@ class app
         }
         return !isset($lang)?$this->_lang_resource:$this->_lang_resource[$lang];
     }
-
+    
+    //未知函数
+    public function _($key){
+        
+    }
+    
+    //取得语言包数据
+    public function lang($res= null,$key= null){
+      return lang::get_info($this->app_id,$res,$key); 
+    }
     
     
 }
