@@ -50,9 +50,9 @@ class app
         return !isset($lang)?$this->_lang_resource:$this->_lang_resource[$lang];
     }
     
-    //未知函数
+    //未 知 函 数
     public function _($key){
-        
+       //return null
     }
     
     //取得语言包数据
