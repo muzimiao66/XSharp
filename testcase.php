@@ -22,3 +22,5 @@
 /*Php strpos 字符串函数*/
 // $strpos = "1234567abcdefghigklmn";
 // echo strpos($strpos, '1');
+.....
+  first 
