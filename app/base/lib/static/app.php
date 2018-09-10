@@ -60,5 +60,13 @@ class app
       return lang::get_info($this->app_id,$res,$key); 
     }
     
+    //render 函数
+    public function render(){
+        if(!$this->__render){
+            $this->__render = new base_render($this);
+        }
+        return $this->__render;
+    }
+    
     
 }
