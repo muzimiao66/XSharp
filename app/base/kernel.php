@@ -204,10 +204,15 @@ class kernel
                         return false;
                     }
             }
-        }elseif (1){
-            return '';
+        }elseif (file_exists($path = APP_DIR.'/base/lib/static/'.$class_name.'.php')){
+            if(defined('CUSTOM_CORE_DIR') && file_exists(CUSTOM_CORE_DIR.'/base/lib/static/'.
+                $class_name.'.php')){
+                $path = CUSTOM_CORE_DIR.'/base/lib/static/'.$class_name.'.php';
+            }
+            return require_once $path;
         }else {
-            return '';
+            throw new Exception('Don\'t find static file "'.$class_name.'"');
+            return false;
         }
         
     }
