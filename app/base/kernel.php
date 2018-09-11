@@ -121,7 +121,7 @@ class kernel
     }
     
     static function service($srv_name,$filter=null){
-        
+        return self::servicelist($srv_name,$filter)->cuttnet();
     }
     
     static function servicelist($srv_name,$filter=null){
