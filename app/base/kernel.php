@@ -190,6 +190,7 @@ class kernel
                         
                     }
                 default:
+                    if(defined('CUSTOM_CORE_DIR') && file_exists(CUSTOM_CORE_DIR.''));
             }
         }elseif (1){
             return '';
