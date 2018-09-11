@@ -190,7 +190,19 @@ class kernel
                         
                     }
                 default:
-                    if(defined('CUSTOM_CORE_DIR') && file_exists(CUSTOM_CORE_DIR.''));
+                    if(defined('CUSTOM_CORE_DIR') && file_exists(CUSTOM_CORE_DIR.'/'.$owner.'/lib/'.
+                    str_replace('_', '/', $class_name).'.php')){
+                        $path = CUSTOM_CORE_DIR.'/'.$owner.'/lib/'.str_replace('_', '/', $class_name).
+                        '.php';
+                    }else{
+                        $path = APP_DIR.'/'.$owner.'/lib/'.str_replace('_', '/',$class_name).'.php';
+                    }
+                    if(file_exists($path)){
+                        return require_once $path;
+                    }else {
+                        throw new Exception('Don\'t find lib file "'.$owner.'_'.$class_name.'"');
+                        return false;
+                    }
             }
         }elseif (1){
             return '';
