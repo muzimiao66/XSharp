@@ -128,6 +128,7 @@ class kernel
 //         if(){
             
 //         }
+
     }
     
     static function strip_magic_quotes(&$var){
